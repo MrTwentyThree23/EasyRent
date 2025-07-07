@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EasyRent - Secure Nairobi Rentals</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { green: { 900: '#004225' }, gold: '#FFD700' },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center p-6 bg-green-900 text-white">
+    <h1 class="text-2xl font-serif font-bold">EasyRent</h1>
+    <nav class="space-x-4">
+      <a href="index.html" class="hover:text-gold">Home</a>
+      <a href="apartments.html" class="hover:text-gold">Apartments</a>
+      <a href="login.html" class="hover:text-gold">Login</a>
+      <a href="signup.html" class="hover:text-gold">Sign Up</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-green-900 text-white py-20 text-center">
+    <h2 class="text-4xl font-serif font-bold mb-4">Find & Pay for Verified Nairobi Apartments</h2>
+    <p class="mb-8">Modern, secure payments with M-Pesa & Cards.</p>
+    <a href="apartments.html" class="bg-gold text-green-900 px-6 py-3 rounded-full font-bold hover:bg-yellow-400 transition">Browse Apartments</a>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 px-6 max-w-5xl mx-auto">
+    <h2 class="text-3xl font-serif font-bold mb-8 text-center">Why EasyRent?</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="shadow-lg p-6 rounded-lg hover:scale-105 transition">
+        <h3 class="text-xl font-semibold mb-2">Verified Apartments</h3>
+        <p>Genuine listings in Westlands, Kilimani, Karen & more.</p>
+      </div>
+      <div class="shadow-lg p-6 rounded-lg hover:scale-105 transition">
+        <h3 class="text-xl font-semibold mb-2">Secure Payments</h3>
+        <p>3-step process with instant receipts.</p>
+      </div>
+      <div class="shadow-lg p-6 rounded-lg hover:scale-105 transition">
+        <h3 class="text-xl font-semibold mb-2">Tenant & Landlord Portals</h3>
+        <p>Dashboards for payments and property management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-900 text-white text-center p-6">
+    &copy; 2025 EasyRent. Your trusted Nairobi rentals.
+  </footer>
+
+</body>
+</html>
