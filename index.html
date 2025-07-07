@@ -1,105 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NaiPay | Dashboard</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
   <style>
-    body { font-family: Inter, sans-serif; margin: 0; background: #f9f9f9; color: #333; }
-    header { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 1rem 2rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-    .logo { font-family: 'Playfair Display', serif; color: #006400; font-size: 1.5rem; font-weight: bold; }
-    nav a { margin: 0 1rem; color: #333; text-decoration: none; font-weight: 500; }
-    .auth-buttons button { margin-left: 1rem; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer; }
-    .login-btn { background: #fff; color: #006400; border: 2px solid #006400; }
-    .signup-btn { background: #006400; color: #fff; }
-    .banner { background: #f5f5e9; padding: 2rem; text-align: center; }
-    .banner h2 { font-family: 'Playfair Display', serif; margin: 0 0 0.5rem; color: #006400; }
-    .banner p { margin: 0; color: #555; }
-    .badge { display: inline-block; background: #006400; color: #fff; padding: 0.25rem 0.75rem; border-radius: 20px; margin-top: 1rem; }
-    .cards { display: flex; gap: 1rem; justify-content: center; margin: 2rem auto; max-width: 900px; flex-wrap: wrap; }
-    .card { background: #fff; flex: 1; min-width: 200px; padding: 1.5rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); text-align: center; }
-    .card h3 { margin: 0.5rem 0; color: #555; }
-    .card p { font-size: 1.5rem; font-weight: bold; color: #006400; }
-    .tabs { display: flex; justify-content: center; background: #f0f0f0; border-radius: 8px; overflow: hidden; max-width: 600px; margin: 0 auto; }
-    .tabs div { flex: 1; padding: 0.75rem; text-align: center; cursor: pointer; }
-    .tabs div:hover { background: #ddd; }
-    .content { display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 1000px; margin: 2rem auto; }
-    .recent, .quick { background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05); width: 45%; min-width: 300px; }
-    .recent h4, .quick h4 { font-family: 'Playfair Display', serif; margin-bottom: 1rem; }
-    .activity, .quick-action { display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0; }
-    .activity span { background: #e6f4ea; color: #006400; padding: 0.25rem 0.5rem; border-radius: 5px; }
-    .quick-action button { background: #006400; color: #fff; border: none; padding: 0.5rem 1rem; border-radius: 5px; margin-top: 0.5rem; cursor: pointer; width: 100%; text-align: left; }
+    body {
+      font-family: Inter, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      color: #006400;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #006400;
+    }
+    .auth-buttons button {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-btn {
+      background: #fff;
+      color: #006400;
+      border: 2px solid #006400;
+    }
+    .signup-btn {
+      background: #006400;
+      color: #fff;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #006400;
+    }
+    .dashboard-cards {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .card {
+      flex: 1;
+      min-width: 250px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: #666;
+    }
+    .card .value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    .status-up {
+      color: #006400;
+    }
+    .tabs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .tab {
+      flex: 1;
+      text-align: center;
+      background: #f0f0f0;
+      padding: 0.75rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .tab:hover {
+      background: #006400;
+      color: #fff;
+    }
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .recent-activity, .quick-actions {
+      flex: 1;
+      min-width: 300px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .recent-activity h3,
+    .quick-actions h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+    }
+    .payment-item {
+      display: flex;
+      justify-content: space-between;
+      background: #f9f9f9;
+      padding: 0.75rem 1rem;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .quick-actions button {
+      display: block;
+      width: 100%;
+      background: #006400;
+      color: #fff;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 5px;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      text-align: left;
+    }
+    .quick-actions button:hover {
+      background: #004d00;
+    }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="logo">NaiPay</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Apartments</a>
-      <a href="#">How It Works</a>
-      <a href="#">Dashboard</a>
+      <a href="index.html">Home</a>
+      <a href="apartments.html">Apartments</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="dashboard.html"><strong>Dashboard</strong></a>
+      <a href="payment.html">Payment</a>
     </nav>
     <div class="auth-buttons">
-      <button class="login-btn">Login</button>
-      <button class="signup-btn">Sign Up</button>
+      <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+      <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
     </div>
   </header>
 
-  <div class="banner">
+  <!-- Main Dashboard -->
+  <div class="container">
     <h2>Welcome back, John Kamau</h2>
     <p>Manage your rent payments</p>
-    <span class="badge">Tenant</span>
-  </div>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Total Paid (YTD)</h3>
-      <p>KSh 170,000</p>
-    </div>
-    <div class="card">
-      <h3>Current Property</h3>
-      <p>1</p>
-    </div>
-    <div class="card">
-      <h3>Payment Status</h3>
-      <p style="color:green;">Up to Date</p>
-    </div>
-  </div>
-
-  <div class="tabs">
-    <div>Overview</div>
-    <div>My Payments</div>
-    <div>My Property</div>
-    <div>Messages</div>
-  </div>
-
-  <div class="content">
-    <div class="recent">
-      <h4>Recent Activity</h4>
-      <div class="activity">
-        <div>
-          <strong>Payment Received</strong><br/>
-          <small>15/01/2024</small>
-        </div>
-        <span>KSh 85,000</span>
+    <div class="dashboard-cards">
+      <div class="card">
+        <h3>Total Paid (YTD)</h3>
+        <div class="value">KSh 170,000</div>
       </div>
-      <div class="activity">
-        <div>
-          <strong>Payment Received</strong><br/>
-          <small>15/12/2023</small>
-        </div>
-        <span>KSh 85,000</span>
+      <div class="card">
+        <h3>Current Property</h3>
+        <div class="value">1</div>
+      </div>
+      <div class="card">
+        <h3>Payment Status</h3>
+        <div class="value status-up">Up to Date</div>
       </div>
     </div>
-    <div class="quick">
-      <h4>Quick Actions</h4>
-      <div class="quick-action"><button>+ Make Payment</button></div>
-      <div class="quick-action"><button>Download Receipt</button></div>
-      <div class="quick-action"><button>Contact Landlord</button></div>
-      <div class="quick-action"><button>Update Profile</button></div>
+
+    <div class="tabs">
+      <div class="tab" onclick="alert('Overview clicked!')">Overview</div>
+      <div class="tab" onclick="window.location.href='payment.html'">My Payments</div>
+      <div class="tab" onclick="window.location.href='apartments.html'">My Property</div>
+      <div class="tab" onclick="alert('Messages clicked!')">Messages</div>
+    </div>
+
+    <div class="section">
+      <!-- Recent Activity -->
+      <div class="recent-activity">
+        <h3>Recent Activity</h3>
+        <div class="payment-item">
+          <span>Payment Received</span>
+          <span>KSh 85,000</span>
+        </div>
+        <div class="payment-item">
+          <span>Payment Received</span>
+          <span>KSh 85,000</span>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+        <h3>Quick Actions</h3>
+        <button onclick="window.location.href='payment.html'">+ Make Payment</button>
+        <button onclick="window.location.href='receipt.html'">Download Receipt</button>
+        <button onclick="alert('Contact landlord: 0712 345678')">Contact Landlord</button>
+        <button onclick="window.location.href='profile.html'">Update Profile</button>
+      </div>
     </div>
   </div>
 </body>
