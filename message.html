@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NaiPay | Messages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      color: #006400;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #006400;
+    }
+    .auth-buttons button {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-btn {
+      background: #fff;
+      color: #006400;
+      border: 2px solid #006400;
+    }
+    .signup-btn {
+      background: #006400;
+      color: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #006400;
+      margin-bottom: 1rem;
+    }
+    .message {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 1rem;
+    }
+    .message p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">NaiPay</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="apartments.html">Apartments</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="payment.html">Payment</a>
+    </nav>
+    <div class="auth-buttons">
+      <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+      <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
+    </div>
+  </header>
+
+  <!-- Messages Section -->
+  <div class="container">
+    <h2>Payment Messages</h2>
+
+    <div class="message">
+      <p>
+        M-PESA CONFIRMED. Ksh25,000.00 sent to ROWWAM INVESTMENTS on 5th July 2025 at 2:15 PM.
+        New M-PESA balance is Ksh12,500. Transaction cost Ksh55.
+      </p>
+    </div>
+
+    <div class="message">
+      <p>
+        M-PESA CONFIRMED. Ksh25,000.00 sent to ROWWAM INVESTMENTS on 3rd June 2025 at 11:30 AM.
+        New M-PESA balance is Ksh20,000. Transaction cost Ksh55.
+      </p>
+    </div>
+
+    <div class="message">
+      <p>
+        M-PESA CONFIRMED. Ksh25,000.00 sent to ROWWAM INVESTMENTS on 2nd May 2025 at 4:45 PM.
+        New M-PESA balance is Ksh8,000. Transaction cost Ksh55.
+      </p>
+    </div>
+
+    <div class="message">
+      <p>
+        M-PESA CONFIRMED. Ksh25,000.00 sent to ROWWAM INVESTMENTS on 1st April 2025 at 10:05 AM.
+        New M-PESA balance is Ksh15,000. Transaction cost Ksh55.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
