@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NaiPay | Messages</title>
+  <title>NaiPay | Payment Messages</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
   <style>
     body {
@@ -35,25 +35,29 @@
     nav a:hover {
       color: #006400;
     }
-    .auth-buttons button {
-      margin-left: 1rem;
-      padding: 0.5rem 1rem;
-      border: none;
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .tab {
+      padding: 1rem 2rem;
+      margin: 0 0.5rem;
+      background: #f0f0f0;
       border-radius: 5px;
       cursor: pointer;
+      font-weight: 500;
     }
-    .login-btn {
-      background: #fff;
-      color: #006400;
-      border: 2px solid #006400;
+    .tab:hover {
+      background: #dcdcdc;
     }
-    .signup-btn {
+    .tab.active {
       background: #006400;
       color: #fff;
     }
     .container {
       max-width: 900px;
-      margin: 2rem auto;
+      margin: 0 auto 4rem;
       padding: 0 1rem;
     }
     h2 {
@@ -86,11 +90,15 @@
       <a href="dashboard.html">Dashboard</a>
       <a href="payment.html">Payment</a>
     </nav>
-    <div class="auth-buttons">
-      <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
-      <button class="signup-btn" onclick="window.location.href='signup.html'">Sign Up</button>
-    </div>
   </header>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <div class="tab" onclick="window.location.href='dashboard.html'">Overview</div>
+    <div class="tab" onclick="window.location.href='payment.html'">My Payments</div>
+    <div class="tab" onclick="window.location.href='apartments.html'">My Property</div>
+    <div class="tab active">Messages</div>
+  </div>
 
   <!-- Messages Section -->
   <div class="container">
