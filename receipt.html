@@ -1,19 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EasyRent KE | Payment Receipt</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>EazzyRent | Rent Payment Receipt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .receipt-details {
+      margin-bottom: 20px;
+    }
+
+    .receipt-details p {
+      margin: 8px 0;
+    }
+
+    .receipt-details strong {
+      width: 150px;
+      display: inline-block;
+    }
+
+    .thankyou {
+      text-align: center;
+      margin-top: 30px;
+      font-style: italic;
+      color: #004080;
+    }
+
+    footer {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-  <div class="receipt-box">
-    <h1>Payment Successful</h1>
-    <p>Amount: Ksh 85,000</p>
-    <p>Property: Westpoint Heights</p>
-    <p>Date: 08/07/2025</p>
-    <p>Thank you for using EasyRent!</p>
-  </div>
+  <header>
+    <h1>EazzyRent</h1>
+    <p>Official Rent Payment Receipt</p>
+  </header>
+
+  <main>
+    <h2>Payment Receipt</h2>
+
+    <div class="receipt-details">
+      <p><strong>Tenant Name:</strong> John Mwangi</p>
+      <p><strong>Apartment:</strong> Sunrise Court, Kilimani</p>
+      <p><strong>Payment Date:</strong> 13/07/2025</p>
+      <p><strong>Payment Method:</strong> M-PESA</p>
+      <p><strong>Transaction Code:</strong> QAL2RT123</p>
+      <p><strong>Amount Paid:</strong> Ksh 15,000.00</p>
+      <p><strong>Paid To:</strong> ROWAM PROPERTIES LTD</p>
+      <p><strong>Balance Due:</strong> Ksh 0.00</p>
+    </div>
+
+    <div class="thankyou">
+      Thank you for your payment! Keep this receipt for your records.
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 EazzyRent | All Rights Reserved
+  </footer>
 </body>
 </html>
