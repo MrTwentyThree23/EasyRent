@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EazzyRent | Find Your Dream Apartment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #004080;
+      --accent-color: #00aaff;
+      --light-color: #f9f9f9;
+      --text-color: #222;
+    }
+
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Urbanist', sans-serif;
+    }
+
+    body {
+      background: var(--light-color);
+      overflow-x: hidden;
+    }
+
+    header {
+      position: absolute;
+      top: 0; left: 0; width: 100%;
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    header h1 {
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 500;
+      transition: opacity 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.75;
+    }
+
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://source.unsplash.com/1600x900/?nairobi,apartments') no-repeat center center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      max-width: 800px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .hero-buttons a {
+      text-decoration: none;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero-buttons a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 30px;
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons a {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EazzyRent</h1>
+    <nav>
+      <a href="signup.html">Sign Up</a>
+      <a href="login.html">Sign In</a>
+      <a href="apartment.html">Apartments</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <h2>Seamless Rentals for Modern Living</h2>
+    <p>
+      Discover premium apartments across Nairobi, sign leases online, and manage your payments — all in one place.
+      Renting made easy, secure, and stress-free with EazzyRent.
+    </p>
+    <div class="hero-buttons">
+      <a href="signup.html">Get Started</a>
+      <a href="login.html">Sign In</a>
+      <a href="apartment.html">Browse Apartments</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 EazzyRent. Nairobi's trusted rental platform.
+  </footer>
+</body>
+</html>
