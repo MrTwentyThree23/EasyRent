@@ -38,7 +38,7 @@
     .tabs {
       display: flex;
       justify-content: center;
-      margin: 2rem 0;
+      margin: 2rem 0 3rem; /* top, right/left, bottom */
     }
     .tab {
       padding: 1rem 2rem;
@@ -47,6 +47,7 @@
       border-radius: 5px;
       cursor: pointer;
       font-weight: 500;
+      transition: all 0.3s ease;
     }
     .tab:hover {
       background: #dcdcdc;
@@ -57,20 +58,21 @@
     }
     .container {
       max-width: 900px;
-      margin: 0 auto 4rem;
-      padding: 0 1rem;
+      margin: 0 auto;
+      padding: 0 1rem 4rem;
     }
     h2 {
       font-family: 'Playfair Display', serif;
       color: #006400;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
     .message {
       background: #fff;
       border-radius: 8px;
       padding: 1rem 1.5rem;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
     .message p {
       margin: 0;
@@ -131,7 +133,6 @@
         New M-PESA balance is Ksh15,000. Transaction cost Ksh55.
       </p>
     </div>
-
   </div>
 </body>
 </html>
